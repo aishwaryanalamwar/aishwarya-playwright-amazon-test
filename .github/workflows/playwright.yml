@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       # Step 3 - Install dependencies
       - name: Install dependencies
@@ -34,8 +34,7 @@ jobs:
 
       # Step 5 - Run tests!
       - name: Run Playwright tests
-        run: npx playwright test --ignore=tests/Autosuggestdropdown.spec.js --ignore=tests/Assertions.spec.js --ignore=tests/Builtinlocators.spec.js --ignore=tests/apitest.spec.js
-
+        run: npx playwright test --ignore=tests/Autosuggestdropdown.spec.js --ignore=tests/Assertions.spec.js --ignore=tests/Builtinlocators.spec.js --ignore=tests/apitest.spec.js --reporter=list
       # Step 6 - Upload test report
       - name: Upload test report
         uses: actions/upload-artifact@v4
