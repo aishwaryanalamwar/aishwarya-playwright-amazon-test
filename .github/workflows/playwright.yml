@@ -34,7 +34,7 @@ jobs:
 
       # Step 5 - Run tests!
       - name: Run Playwright tests
-        run: npx playwright test --ignore-glob="tests/Autosuggestdropdown.spec.js" --ignore-glob="tests/Assertions.spec.js" --ignore-glob="tests/Builtinlocators.spec.js" --ignore-glob="tests/apitest.spec.js" --ignore-glob="tests/Datepicker.spec.js" --ignore-glob="tests/Hooks1.spec.js" --ignore-glob="tests/Hooks3.spec.js" --ignore-glob="tests/Login.spec.js" --ignore-glob="tests/Login1.spec.js" --ignore-glob="tests/Reporters.spec.js" --ignore-glob="tests/Softassertions.spec.js" --ignore-glob="tests/test-1.spec.ts" --ignore-glob="tests/test-2.spec.ts" --ignore-glob="tests/Videos.spec.js" --reporter=list,html
+        run: npx playwright test --reporter=list,html
 
       # Step 6 - Upload test report
       - name: Upload test report

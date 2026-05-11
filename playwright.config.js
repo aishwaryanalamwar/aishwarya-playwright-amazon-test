@@ -42,7 +42,23 @@ module.exports = defineConfig({
     },
     timeout: config.timeout,
 
-  
+  testIgnore: [
+  'tests/Autosuggestdropdown.spec.js',
+  'tests/Assertions.spec.js',
+  'tests/Builtinlocators.spec.js',
+  'tests/apitest.spec.js',
+  'tests/Datepicker.spec.js',
+  'tests/Hooks1.spec.js',
+  'tests/Hooks3.spec.js',
+  'tests/Login.spec.js',
+  'tests/Login1.spec.js',
+  'tests/Reporters.spec.js',
+  'tests/Softassertions.spec.js',
+  'tests/test-1.spec.ts',
+  'tests/test-2.spec.ts',
+  'tests/Videos.spec.js',
+],
+
   //use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
