@@ -4,13 +4,13 @@ name: Playwright Tests
 
 on:
   push:
-    branches: [ main ]        # run when code pushed to main
+    branches: [ main ]
   pull_request:
-    branches: [ main ]        # run when PR created
+    branches: [ main ]
 
 jobs:
   test:
-    runs-on: ubuntu-latest    # run on Linux machine
+    runs-on: ubuntu-latest
 
     steps:
 
@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '22'
 
       # Step 3 - Install dependencies
       - name: Install dependencies
@@ -34,11 +34,12 @@ jobs:
 
       # Step 5 - Run tests!
       - name: Run Playwright tests
-        run: npx playwright test --ignore=tests/Autosuggestdropdown.spec.js --ignore=tests/Assertions.spec.js --ignore=tests/Builtinlocators.spec.js --ignore=tests/apitest.spec.js --reporter=list
+        run: npx playwright test --ignore=tests/Autosuggestdropdown.spec.js --ignore=tests/Assertions.spec.js --ignore=tests/Builtinlocators.spec.js --ignore=tests/apitest.spec.js --reporter=list,html
+
       # Step 6 - Upload test report
       - name: Upload test report
         uses: actions/upload-artifact@v4
-        if: always()          # upload even if tests fail
+        if: always()
         with:
           name: playwright-report
           path: playwright-report/
