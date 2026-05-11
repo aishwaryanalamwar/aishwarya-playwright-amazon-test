@@ -33,8 +33,8 @@ jobs:
         run: npx playwright install --with-deps
 
       # Step 5 - Run tests!
-      - name: Run Playwright tests
-        run: npx playwright test --ignore=tests/Autosuggestdropdown.spec.js --ignore=tests/Assertions.spec.js --ignore=tests/Builtinlocators.spec.js --ignore=tests/apitest.spec.js --reporter=list,html
+      -  name: Run Playwright tests
+         run: npx playwright test --reporter=list,html
 
       # Step 6 - Upload test report
       - name: Upload test report
